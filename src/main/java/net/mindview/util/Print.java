@@ -1,7 +1,7 @@
 //: net/mindview/util/Print.java
 // Print methods that can be used without
 // qualifiers, using Java SE5 static imports:
-package think.in.java.common;
+package net.mindview.util;
 
 import java.io.PrintStream;
 
@@ -10,12 +10,10 @@ public class Print {
     public static void pr1int(Object obj) {
         System.out.println(obj);
     }
-
     // Print with a newline:
     public static void print(Object obj) {
         System.out.println(obj);
     }
-
     // Print a newline by itself:
     public static void print() {
         System.out.println();
