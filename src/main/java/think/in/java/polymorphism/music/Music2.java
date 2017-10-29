@@ -22,7 +22,7 @@ class Brass extends Instrument {
 }
 
 /**
- * 不适用多台，则tune()方法的参数，需要制定到具体类型
+ * 不适用多态，则tune()方法的参数，需要指定到具体类型
  */
 public class Music2 {
 
