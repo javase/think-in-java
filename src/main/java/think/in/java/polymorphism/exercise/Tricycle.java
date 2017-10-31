@@ -5,4 +5,8 @@ public class Tricycle extends Cycle {
 	public int wheels() {
 		return 3;
 	}
+
+	public void balance() {
+		System.out.println(this.getClass().getSimpleName() + ".balance()");
+	}
 }
