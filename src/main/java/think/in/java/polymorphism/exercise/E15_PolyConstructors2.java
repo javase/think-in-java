@@ -12,7 +12,7 @@ class Glyph {
 	}
 
 	/**
-	 * 在父类的构造器中，调用动态绑定的方法
+	 * 在基类的构造器中，调用动态绑定的方法（此方法被导出类覆盖）
 	 *
 	 */
 	Glyph() {
@@ -30,6 +30,7 @@ class RoundGlyph extends Glyph {
 		print("RoundGlyph.RoundGlyph(), radius = " + radius);
 	}
 
+	@Override
 	void draw() {
 		print("RoundGlyph.draw(), radius = " + radius);
 	}
@@ -53,8 +54,8 @@ class RectangularGlyph extends Glyph {
 }
 
 /**
- * 在父类构造器中，调用动态绑定的方法，则导出类方法被调用时，导出类的域实际上还未初始化；
- * 当调用到导出类的构造器时，导出类的域已经被初始化了；
+ * 在基类构造器中，调用动态绑定的方法，则导出类方法被调用时，导出类的成员实际上还未被初始化；
+ * 当调用到导出类的构造器时，导出类的成员已经被初始化了；
  */
 public class E15_PolyConstructors2 {
 	public static void main(String[] args) {
