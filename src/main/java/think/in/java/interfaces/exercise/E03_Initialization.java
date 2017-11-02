@@ -1,4 +1,4 @@
-package think.in.java.interfaces.music4.exercise;
+package think.in.java.interfaces.exercise;
 
 /**
  * 包含抽象方法print()

@@ -1,4 +1,4 @@
-package think.in.java.interfaces.music4.exercise;
+package think.in.java.interfaces.exercise;
 
 /**
  * Created by limenghua on 2017/11/1.

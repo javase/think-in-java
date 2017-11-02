@@ -1,24 +1,16 @@
-package think.in.java.interfaces.music4.exercise;
+package think.in.java.interfaces.exercise;
 
 import static net.mindview.util.Print.print;
 
-/**
- * 把普通的基类，改造成抽象类；
- * 把原来基类里面被继承的方法，修改成抽象方法；
- */
-abstract class Rodent {
-	public abstract void hop();
+interface Rodent2 {
+	void hop();
 
-	public abstract void scurry();
+	void scurry();
 
-	public abstract void reproduce();
-
-	public String toString() {
-		return "Rodent";
-	}
+	void reproduce();
 }
 
-class Mouse extends Rodent {
+class Mouse2 implements Rodent2 {
 	public void hop() {
 		print("Mouse hopping");
 	}
@@ -36,7 +28,7 @@ class Mouse extends Rodent {
 	}
 }
 
-class Gerbil extends Rodent {
+class Gerbil2 implements Rodent2 {
 	public void hop() {
 		print("Gerbil hopping");
 	}
@@ -54,7 +46,7 @@ class Gerbil extends Rodent {
 	}
 }
 
-class Hamster extends Rodent {
+class Hamster2 implements Rodent2 {
 	public void hop() {
 		print("Hamster hopping");
 	}
@@ -72,20 +64,18 @@ class Hamster extends Rodent {
 	}
 }
 
-
-public class E01_Rodents {
+public class E07_RodentInterface {
 	public static void main(String args[]) {
-		Rodent[] rodents = {
-				new Mouse(),
-				new Gerbil(),
-				new Hamster(),
+		Rodent2[] rodents = {
+				new Mouse2(),
+				new Gerbil2(),
+				new Hamster2(),
 		};
-		for (Rodent r : rodents) {
+		for (Rodent2 r : rodents) {
 			r.hop();
 			r.scurry();
 			r.reproduce();
 			print(r);
-			print("-------");
 		}
 	}
 }
