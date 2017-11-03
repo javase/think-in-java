@@ -7,6 +7,6 @@ public class Waveform {
 	private final long id = counter++;
 
 	public String toString() {
-		return "Waveform " + id;
+		return String.format("Waveform id:%d", id);
 	}
 } ///:~
