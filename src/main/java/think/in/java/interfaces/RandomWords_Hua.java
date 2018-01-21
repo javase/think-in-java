@@ -14,13 +14,16 @@ public class RandomWords_Hua implements Readable {
 
 	public int read(CharBuffer cb) {
 		if (--count < 0) {
+			// -1 表示该输入资源结束
 			return -1;
 		}
 		cb.append("这");
+		cb.append("儿");
 		cb.append("随");
 		cb.append("便");
 		cb.append("写");
 		cb.append(" ");
+		// 0 不对字符进行缓存
 		return 0;
 	}
 
