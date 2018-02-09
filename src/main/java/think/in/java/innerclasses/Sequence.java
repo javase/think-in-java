@@ -72,3 +72,19 @@ public class Sequence {
 		}
 	}// end main method
 }
+
+/**
+ * 练习题
+ */
+class StringHolder {
+	private String data;
+
+	StringHolder(String data) {
+		this.data = data;
+	}
+
+	public String toString() {
+		return data;
+	}
+}
+
