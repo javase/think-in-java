@@ -1,6 +1,5 @@
 package think.in.java.innerclasses;
 
-import static net.mindview.util.Print.print;
 
 /**
  * 迭代器接口
@@ -68,7 +67,7 @@ public class Sequence {
 		}
 		Selector selector = sequence.getSelector();
 		while (!selector.end()) {
-			print(String.format("当前对象是：%s", selector.current()));
+			System.out.println((String.format("当前对象是：%s", selector.current())));
 			selector.next();
 		}
 	}// end main method
