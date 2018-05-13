@@ -20,34 +20,42 @@ class All2 extends Abstract implements Multiple {
 		super("All2");
 	}
 
+	@Override
 	void af() {
 		print("All.af");
 	}
 
+	@Override
 	public void f1() {
 		print("All.f1");
 	}
 
+	@Override
 	public void g1() {
 		print("All.g1");
 	}
 
+	@Override
 	public void f2() {
 		print("All.f2");
 	}
 
+	@Override
 	public void g2() {
 		print("All.g2");
 	}
 
+	@Override
 	public void f3() {
 		print("All.f3");
 	}
 
+	@Override
 	public void g3() {
 		print("All.g3");
 	}
 
+	@Override
 	public void h() {
 		print("All2.h");
 	}

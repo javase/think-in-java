@@ -8,10 +8,12 @@ interface BaseInterface {
 }
 
 interface IntermediateInterface1 extends BaseInterface {
+	@Override
 	void f();
 }
 
 interface IntermediateInterface2 extends BaseInterface {
+	@Override
 	void f();
 }
 
@@ -20,10 +22,12 @@ interface IntermediateInterface2 extends BaseInterface {
  */
 interface CombinedInterface
 		extends IntermediateInterface1, IntermediateInterface2 {
+	@Override
 	void f();
 }
 
 class CombinedImpl implements CombinedInterface {
+	@Override
 	public void f() {
 		System.out.println("CombinedImpl.f()");
 	}

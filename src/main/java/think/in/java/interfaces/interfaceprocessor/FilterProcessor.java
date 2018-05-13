@@ -21,6 +21,7 @@ class FilterAdapter implements Processor {
 		this.filter = filter;
 	}
 
+	@Override
 	public String name() {
 		return filter.name();
 	}
@@ -30,6 +31,7 @@ class FilterAdapter implements Processor {
 	 * @param input
 	 * @return
 	 */
+	@Override
 	public Waveform process(Object input) {
 		Waveform waveform = filter.process((Waveform) input);
 		return waveform;

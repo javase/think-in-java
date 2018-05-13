@@ -47,6 +47,7 @@ class RectangularGlyph extends Glyph {
 		print("RectangularGlyph.RectangularGlyph(), width = " + width + ", height = " + height);
 	}
 
+	@Override
 	void draw() {
 		print("RectangularGlyph.draw(), area = " + width *
 				height);

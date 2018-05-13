@@ -32,7 +32,7 @@ class StaticSub extends StaticSuper {
 public class StaticPolymorphism {
 	public static void main(String[] args) {
 		StaticSuper sup = new StaticSub(); // Upcast
-		print(sup.staticGet());
+		print(StaticSuper.staticGet());
 		print(sup.dynamicGet());
 	}
 } /* Output:

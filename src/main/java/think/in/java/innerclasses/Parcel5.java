@@ -13,6 +13,7 @@ public class Parcel5 {
 				label = whereTo;
 			}
 
+			@Override
 			public String readLabel() {
 				return label;
 			}
@@ -22,6 +23,7 @@ public class Parcel5 {
 
 	// 和 destination() 方法里面的内部类名字并不冲突
 	class PDestination implements Destination{
+		@Override
 		public String readLabel() {
 			return null;
 		}

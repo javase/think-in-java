@@ -16,10 +16,12 @@ class Implementation1 implements Service2 {
 	Implementation1() {
 	} // Package access
 
+	@Override
 	public void method1() {
 		print("Implementation1 method1");
 	}
 
+	@Override
 	public void method2() {
 		print("Implementation1 method2");
 	}
@@ -30,10 +32,12 @@ class Implementation2 implements Service2 {
 	Implementation2() {
 	} // Package access
 
+	@Override
 	public void method1() {
 		print("Implementation2 method1");
 	}
 
+	@Override
 	public void method2() {
 		print("Implementation2 method2");
 	}
@@ -53,12 +57,14 @@ public class Factories1 {
 	 */
 	public static void main(String[] args) {
 		serviceConsumer(new ServiceFactory2() {
+			@Override
 			public Service2 getService() {
 				return new Implementation1();
 			}
 		});
 		// Implementations are completely interchangeable:
 		serviceConsumer(new ServiceFactory2() {
+			@Override
 			public Service2 getService() {
 				return new Implementation2();
 			}

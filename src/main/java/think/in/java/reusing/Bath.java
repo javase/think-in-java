@@ -14,6 +14,7 @@ class Soap {
         s = "Constructed";// 在构造器初始化
     }
 
+    @Override
     public String toString() {
         return s;
     }
@@ -43,9 +44,12 @@ public class Bath {
         i = 47;
     }
 
+    @Override
     public String toString() {
         if (s4 == null) // Delayed initialization:  在使用的时候初始化
-            s4 = "Joy";
+		{
+			s4 = "Joy";
+		}
         return
                 "s1 = " + s1 + "\n" +
                         "s2 = " + s2 + "\n" +

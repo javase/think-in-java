@@ -30,16 +30,21 @@ class Sequence2 {
 	private class SequenceSelector implements Selector {
 		private int i;
 
+		@Override
 		public boolean end() {
 			return i == items.length;
 		}
 
+		@Override
 		public Object current() {
 			return items[i];
 		}
 
+		@Override
 		public void next() {
-			if (i < items.length) i++;
+			if (i < items.length) {
+				i++;
+			}
 		}
 
 		/**

@@ -6,8 +6,9 @@ public class ConnectionManager {
     private static int counter = 0;
 
     static {
-        for (int i = 0; i < pool.length; i++)
-            pool[i] = new Connection();
+        for (int i = 0; i < pool.length; i++) {
+			pool[i] = new Connection();
+		}
     }
 
     // Very simple -- just hands out each one once:

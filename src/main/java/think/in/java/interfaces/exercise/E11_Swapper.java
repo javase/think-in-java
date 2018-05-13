@@ -22,10 +22,12 @@ class CharacterPairSwapper {
 }
 
 class SwapperAdapter implements Processor {
+	@Override
 	public String name() {
 		return CharacterPairSwapper.class.getSimpleName();
 	}
 
+	@Override
 	public String process(Object input) {
 		return CharacterPairSwapper.swap((String) input);
 	}

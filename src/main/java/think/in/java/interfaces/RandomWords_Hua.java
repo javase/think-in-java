@@ -12,6 +12,7 @@ public class RandomWords_Hua implements Readable {
 		this.count = count;
 	}
 
+	@Override
 	public int read(CharBuffer cb) {
 		if (--count < 0) {
 			// -1 表示该输入资源结束

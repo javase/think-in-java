@@ -40,9 +40,11 @@ class E16_AdaptedCharSequence extends CharSequence
 		this.count = count;
 	}
 
+	@Override
 	public int read(CharBuffer cb) {
-		if (count-- == 0)
+		if (count-- == 0) {
 			return -1; // Indicates end of input
+		}
 		char[] buffer = generate();
 		cb.put(buffer);
 		return buffer.length;
@@ -51,7 +53,8 @@ class E16_AdaptedCharSequence extends CharSequence
 	public static void main(String[] args) {
 		Scanner s =
 				new Scanner(new E16_AdaptedCharSequence(10));
-		while (s.hasNext())
+		while (s.hasNext()) {
 			System.out.println(s.next());
+		}
 	}
 }

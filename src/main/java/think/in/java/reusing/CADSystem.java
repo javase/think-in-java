@@ -20,7 +20,8 @@ class Circle extends Shape {
         print("Drawing Circle");
     }
 
-    void dispose() {
+    @Override
+	void dispose() {
         print("Erasing Circle");
         super.dispose();
     }
@@ -32,7 +33,8 @@ class Triangle extends Shape {
         print("Drawing Triangle");
     }
 
-    void dispose() {
+    @Override
+	void dispose() {
         print("Erasing Triangle");
         super.dispose();
     }
@@ -48,7 +50,8 @@ class Line extends Shape {
         print("Drawing Line: " + start + ", " + end);
     }
 
-    void dispose() {
+    @Override
+	void dispose() {
         print("Erasing Line: " + start + ", " + end);
         super.dispose();
     }
@@ -72,7 +75,8 @@ public class CADSystem extends Shape {
         print("组合Combined constructor");
     }
 
-    public void dispose() {
+    @Override
+	public void dispose() {
         print("CADSystem.dispose()");
         // The order of cleanup is the reverse
         // of the order of initialization:

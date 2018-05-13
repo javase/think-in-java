@@ -9,12 +9,14 @@ interface CycleFactory {
 }
 
 class Unicycle implements Cycle {
+	@Override
 	public int wheels() {
 		return 1;
 	}
 
 	public static CycleFactory factory =
 			new CycleFactory() {
+				@Override
 				public Unicycle getCycle() {
 					return new Unicycle();
 				}
@@ -22,12 +24,14 @@ class Unicycle implements Cycle {
 }
 
 class Bicycle implements Cycle {
+	@Override
 	public int wheels() {
 		return 2;
 	}
 
 	public static CycleFactory factory =
 			new CycleFactory() {
+				@Override
 				public Bicycle getCycle() {
 					return new Bicycle();
 				}
@@ -35,12 +39,14 @@ class Bicycle implements Cycle {
 }
 
 class Tricycle implements Cycle {
+	@Override
 	public int wheels() {
 		return 3;
 	}
 
 	public static CycleFactory factory =
 			new CycleFactory() {
+				@Override
 				public Tricycle getCycle() {
 					return new Tricycle();
 				}

@@ -41,30 +41,37 @@ class All extends Concrete implements Multiple {
 		super("All");
 	}
 
+	@Override
 	public void h() {
 		print("All.h");
 	}
 
+	@Override
 	public void f1() {
 		print("All.f1");
 	}
 
+	@Override
 	public void g1() {
 		print("All.g1");
 	}
 
+	@Override
 	public void f2() {
 		print("All.f2");
 	}
 
+	@Override
 	public void g2() {
 		print("All.g2");
 	}
 
+	@Override
 	public void f3() {
 		print("All.f3");
 	}
 
+	@Override
 	public void g3() {
 		print("All.g3");
 	}

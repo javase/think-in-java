@@ -14,12 +14,15 @@ public class E06_InterfacePublicMethods
 	//!  void g() {}
 	//!  void h() {}
 	// Compiles OK:
+	@Override
 	public void f() {
 	}
 
+	@Override
 	public void g() {
 	}
 
+	@Override
 	public void h() {
 	}
 

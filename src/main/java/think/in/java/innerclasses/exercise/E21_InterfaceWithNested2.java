@@ -23,10 +23,12 @@ public class E21_InterfaceWithNested2 {
 
 		I impl = new I() {
 
+			@Override
 			public void f() {
 				System.out.println("implemented f()");
 			}
 
+			@Override
 			public void g() {
 				System.out.println("implemented g()");
 			}

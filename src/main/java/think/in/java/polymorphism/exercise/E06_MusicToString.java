@@ -33,6 +33,7 @@ class Instrument {
 		print("Instrument.play() " + n);
 	}
 
+	@Override
 	public String toString() {
 		return "Instrument";
 	}
@@ -42,50 +43,60 @@ class Instrument {
 }
 
 class Wind extends Instrument {
+	@Override
 	void play(Note n) {
 		print("Wind.play() " + n);
 	}
 
+	@Override
 	public String toString() {
 		return "Wind";
 	}
 }
 
 class Percussion extends Instrument {
+	@Override
 	void play(Note n) {
 		print("Percussion.play() " + n);
 	}
 
+	@Override
 	public String toString() {
 		return "Percussion";
 	}
 }
 
 class Stringed extends Instrument {
+	@Override
 	void play(Note n) {
 		print("Stringed.play() " + n);
 	}
 
+	@Override
 	public String toString() {
 		return "Stringed";
 	}
 }
 
 class Brass extends Wind {
+	@Override
 	void play(Note n) {
 		print("Brass.play() " + n);
 	}
 
+	@Override
 	void adjust() {
 		print("Brass.adjust()");
 	}
 }
 
 class Woodwind extends Wind {
+	@Override
 	void play(Note n) {
 		print("Woodwind.play() " + n);
 	}
 
+	@Override
 	public String toString() {
 		return "Woodwind";
 	}

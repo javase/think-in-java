@@ -26,11 +26,13 @@ class ActionCharacter {
  */
 class Hero extends ActionCharacter
 		implements CanFight, CanSwim, CanFly {
+	@Override
 	public void swim() {
 		print("sub class swim method");
 
 	}
 
+	@Override
 	public void fly() {
 		print("sub class fly method");
 	}

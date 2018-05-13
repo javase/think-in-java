@@ -11,6 +11,7 @@ class AlertStatus {
 }
 
 class RedAlertStatus extends AlertStatus {
+	@Override
 	public String getStatus() {
 		return "Red";
 	}
@@ -19,6 +20,7 @@ class RedAlertStatus extends AlertStatus {
 }
 
 class YellowAlertStatus extends AlertStatus {
+	@Override
 	public String getStatus() {
 		return "Yellow";
 	}
@@ -27,6 +29,7 @@ class YellowAlertStatus extends AlertStatus {
 }
 
 class GreenAlertStatus extends AlertStatus {
+	@Override
 	public String getStatus() {
 		return "Green";
 	}
@@ -41,6 +44,7 @@ class Starship {
 		status = istatus;
 	}
 
+	@Override
 	public String toString() {
 		return status.getStatus();
 	}

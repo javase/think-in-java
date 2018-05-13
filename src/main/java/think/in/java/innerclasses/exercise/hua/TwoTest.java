@@ -17,11 +17,13 @@ public class TwoTest {
 	public InterfaceTwoMethod getInterface() {
 		// 匿名内部类实现的接口，可以包含多个方法
 		return new InterfaceTwoMethod() {
+			@Override
 			public void f1() {
 				print("method1");
 
 			}
 
+			@Override
 			public void f2() {
 				print("method2");
 			}

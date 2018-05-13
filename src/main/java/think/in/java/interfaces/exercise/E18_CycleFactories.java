@@ -10,36 +10,42 @@ interface CycleFactory {
 }
 
 class Unicycle implements Cycle {
+	@Override
 	public int wheels() {
 		return 1;
 	}
 }
 
 class UnicycleFactory implements CycleFactory {
+	@Override
 	public Unicycle getCycle() {
 		return new Unicycle();
 	}
 }
 
 class Bicycle implements Cycle {
+	@Override
 	public int wheels() {
 		return 2;
 	}
 }
 
 class BicycleFactory implements CycleFactory {
+	@Override
 	public Bicycle getCycle() {
 		return new Bicycle();
 	}
 }
 
 class Tricycle implements Cycle {
+	@Override
 	public int wheels() {
 		return 3;
 	}
 }
 
 class TricycleFactory implements CycleFactory {
+	@Override
 	public Tricycle getCycle() {
 		return new Tricycle();
 	}

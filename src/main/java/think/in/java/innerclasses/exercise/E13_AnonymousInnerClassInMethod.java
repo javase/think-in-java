@@ -10,6 +10,7 @@ public class E13_AnonymousInnerClassInMethod {
 	public SimpleInterface get() {
 
 		return new SimpleInterface() {
+			@Override
 			public void f() {
 				System.out.println("SimpleInterface.f");
 			}

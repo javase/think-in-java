@@ -46,8 +46,9 @@ public class Car {
             right = new Door(); // 2-door
 
     public Car() {
-        for (int i = 0; i < 4; i++)
-            wheel[i] = new Wheel();
+        for (int i = 0; i < 4; i++) {
+			wheel[i] = new Wheel();
+		}
     }
 
     public static void main(String[] args) {

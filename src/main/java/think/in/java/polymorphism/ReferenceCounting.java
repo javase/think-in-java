@@ -19,10 +19,12 @@ class Shared {
 	}
 
 	protected void dispose() {
-		if (--refcount == 0)
+		if (--refcount == 0) {
 			print("Disposing " + this);
+		}
 	}
 
+	@Override
 	public String toString() {
 		return "Shared " + id;
 	}
@@ -46,6 +48,7 @@ class Composing {
 		shared.dispose();
 	}
 
+	@Override
 	public String toString() {
 		return "Composing " + id;
 	}
@@ -57,8 +60,9 @@ public class ReferenceCounting {
 		Composing[] composing = {new Composing(shared),
 				new Composing(shared), new Composing(shared),
 				new Composing(shared), new Composing(shared)};
-		for (Composing c : composing)
+		for (Composing c : composing) {
 			c.dispose();
+		}
 	}
 } /* Output:
 Creating Shared 0

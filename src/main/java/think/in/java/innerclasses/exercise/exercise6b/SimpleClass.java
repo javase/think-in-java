@@ -14,6 +14,7 @@ public class SimpleClass {
 		public Inner() {
 		}
 
+		@Override
 		public void f() {
 		}
 	}

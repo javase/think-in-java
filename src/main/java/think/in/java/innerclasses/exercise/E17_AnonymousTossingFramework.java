@@ -13,6 +13,7 @@ class CoinTossing implements Tossing {
 
 	private static final int EVENTS = 2;
 
+	@Override
 	public boolean event() {
 		System.out.println("Coin tossing event " + events);
 		return ++events != EVENTS;
@@ -20,6 +21,7 @@ class CoinTossing implements Tossing {
 
 	public static TossingFactory factory =
 			new TossingFactory() {
+				@Override
 				public CoinTossing getTossing() {
 					return new CoinTossing();
 				}
@@ -31,6 +33,7 @@ class DiceTossing implements Tossing {
 
 	private static final int EVENTS = 6;
 
+	@Override
 	public boolean event() {
 		System.out.println("Dice tossing event " + events);
 		return ++events != EVENTS;
@@ -38,6 +41,7 @@ class DiceTossing implements Tossing {
 
 	public static TossingFactory factory =
 			new TossingFactory() {
+				@Override
 				public DiceTossing getTossing() {
 					return new DiceTossing();
 				}
@@ -50,8 +54,9 @@ class DiceTossing implements Tossing {
 public class E17_AnonymousTossingFramework {
 	public static void simulate(TossingFactory fact) {
 		Tossing t = fact.getTossing();
-		while (t.event())
+		while (t.event()) {
 			;
+		}
 	}
 
 	public static void main(String[] args) {

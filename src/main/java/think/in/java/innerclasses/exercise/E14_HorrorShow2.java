@@ -43,9 +43,11 @@ public class E14_HorrorShow2 {
 	public static void main(String[] args) {
 
 		DangerousMonster barney = new DangerousMonster() {
+			@Override
 			public void menace() {
 			}
 
+			@Override
 			public void destroy() {
 			}
 		};
@@ -54,15 +56,19 @@ public class E14_HorrorShow2 {
 		HorrorShow2.v(barney);
 
 		Vampire vlad = new Vampire() {
+			@Override
 			public void menace() {
 			}
 
+			@Override
 			public void destroy() {
 			}
 
+			@Override
 			public void kill() {
 			}
 
+			@Override
 			public void drinkBlood() {
 			}
 		};

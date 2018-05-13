@@ -19,8 +19,9 @@ public class E16_StringArray {
         String sa2[] = {
                 "These", "are", "some", "strings"
         };
-        for (int i = 0; i < sa2.length; i++)
-            System.out.println(sa2[i]);
+        for (int i = 0; i < sa2.length; i++) {
+			System.out.println(sa2[i]);
+		}
     }
 } /* Output:
 These

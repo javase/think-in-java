@@ -18,34 +18,40 @@ abstract class Instrument {
 	}
 
 	// Forces implementation in derived class:
+	@Override
 	public abstract String toString();
 }
 
 class Wind extends Instrument {
+	@Override
 	public String toString() {
 		return "Wind";
 	}
 }
 
 class Percussion extends Instrument {
+	@Override
 	public String toString() {
 		return "Percussion";
 	}
 }
 
 class Stringed extends Instrument {
+	@Override
 	public String toString() {
 		return "Stringed";
 	}
 }
 
 class Brass extends Wind {
+	@Override
 	public String toString() {
 		return "Brass";
 	}
 }
 
 class Woodwind extends Wind {
+	@Override
 	public String toString() {
 		return "Woodwind";
 	}

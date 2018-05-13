@@ -7,7 +7,8 @@ public class Connection {
     Connection() {
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
         return "Connection " + id;
     }
 

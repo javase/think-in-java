@@ -9,6 +9,7 @@ public class E09_InnerClassInMethod {
 
 		// 局部内部类实现了上述方法返回的接口
 		class SI implements SimpleInterface {
+			@Override
 			public void f() {
 				System.out.println("SI.f");
 			}

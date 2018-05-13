@@ -8,6 +8,7 @@ public class LowPass extends Filter {
 		this.cutoff = cutoff;
 	}
 
+	@Override
 	public Waveform process(Waveform input) {
 		return input; // Dummy processing
 	}

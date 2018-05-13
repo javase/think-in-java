@@ -10,8 +10,9 @@ class Sequence3 {
 	}
 
 	public void add(Object x) {
-		if (next < objects.length)
+		if (next < objects.length) {
 			objects[next++] = x;
+		}
 	}
 
 	/**
@@ -20,14 +21,17 @@ class Sequence3 {
 	private class ReverseSelector implements Selector {
 		int i = objects.length - 1;
 
+		@Override
 		public boolean end() {
 			return i < 0;
 		}
 
+		@Override
 		public Object current() {
 			return objects[i];
 		}
 
+		@Override
 		public void next() {
 			if (i >= 0) {
 				i--;
@@ -40,14 +44,17 @@ class Sequence3 {
 	 */	private class SequenceSelector implements Selector {
 		private int i = 0;
 
+		@Override
 		public boolean end() {
 			return i == objects.length;
 		}
 
+		@Override
 		public Object current() {
 			return objects[i];
 		}
 
+		@Override
 		public void next() {
 			if (i < objects.length) {
 				i++;

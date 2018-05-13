@@ -42,14 +42,17 @@ public class Sequence {
 
 		private int i = 0;
 
+		@Override
 		public boolean end() {
 			return i == items.length;
 		}
 
+		@Override
 		public Object current() {
 			return items[i];
 		}
 
+		@Override
 		public void next() {
 			if (i < items.length) {
 				i++;
@@ -83,6 +86,7 @@ class StringHolder {
 		this.data = data;
 	}
 
+	@Override
 	public String toString() {
 		return data;
 	}

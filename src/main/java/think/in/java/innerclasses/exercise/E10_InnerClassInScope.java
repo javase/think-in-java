@@ -12,6 +12,7 @@ public class E10_InnerClassInScope {
 		// 内部类放在方法的一个作用域内
 		{
 			class SI implements SimpleInterface {
+				@Override
 				public void f() {
 					System.out.println("SI.f");
 				}

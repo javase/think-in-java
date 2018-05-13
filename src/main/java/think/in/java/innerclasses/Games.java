@@ -19,12 +19,14 @@ class Checkers implements Game {
 
 	private static final int MOVES = 3;
 
+	@Override
 	public boolean move() {
 		print("Checkers move " + moves);
 		return ++moves != MOVES;
 	}
 
 	public static GameFactory gameFactory = new GameFactory() {
+		@Override
 		public Game getGame() {
 			return new Checkers();
 		}
@@ -45,12 +47,14 @@ class Chess implements Game {
 
 	private static final int MOVES = 4;
 
+	@Override
 	public boolean move() {
 		print("Chess move " + moves);
 		return ++moves != MOVES;
 	}
 
 	public static GameFactory gameFactory = new GameFactory() {
+		@Override
 		public Game getGame() {
 			return new Chess();
 		}
@@ -70,8 +74,9 @@ public class Games {
 	public static void playGame(GameFactory factory) {
 		Game s = factory.getGame();
 		// 使用工厂方法的好处：在不同类型的游戏中，复用Games类中的代码
-		while (s.move())
+		while (s.move()) {
 			;
+		}
 	}
 
 	public static void main(String[] args) {

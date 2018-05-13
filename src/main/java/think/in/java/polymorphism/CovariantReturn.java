@@ -1,12 +1,14 @@
 package think.in.java.polymorphism;//: polymorphism/CovariantReturn.java
 
 class Grain {
+	@Override
 	public String toString() {
 		return "Grain";
 	}
 }
 
 class Wheat extends Grain {
+	@Override
 	public String toString() {
 		return "Wheat";
 	}
@@ -19,6 +21,7 @@ class Mill {
 }
 
 class WheatMill extends Mill {
+	@Override
 	Wheat process() {
 		return new Wheat();
 	}

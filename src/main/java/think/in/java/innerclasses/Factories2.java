@@ -16,15 +16,18 @@ class Implementation12 implements Service2 {
 	Implementation12() {
 	} // Package access
 
+	@Override
 	public void method1() {
 		print("Implementation1 method1");
 	}
 
+	@Override
 	public void method2() {
 		print("Implementation1 method2");
 	}
 
 	public static ServiceFactory2 factory2 = new ServiceFactory2() {
+		@Override
 		public Service2 getService() {
 			return new Implementation12();
 		}
@@ -36,15 +39,18 @@ class Implementation22 implements Service2 {
 	Implementation22() {
 	} // Package access
 
+	@Override
 	public void method1() {
 		print("Implementation2 method1");
 	}
 
+	@Override
 	public void method2() {
 		print("Implementation2 method2");
 	}
 
 	public static ServiceFactory2 factory2 = new ServiceFactory2() {
+		@Override
 		public Service2 getService() {
 			return new Implementation22();
 		}

@@ -10,6 +10,7 @@ class Outer2 {
 	 * 内部类的toString方法可以返回外部类的data属性
 	 */
 	class Inner {
+		@Override
 		public String toString() {
 			return data;
 		}

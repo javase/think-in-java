@@ -20,14 +20,16 @@ class SharedMember {
 	}
 
 	protected void dispose() {
-		if (--refcount == 0)
+		if (--refcount == 0) {
 			print("Disposing " + this);
+		}
 	}
 
 	public SharedMember() {
 		print("Shared member constructor");
 	}
 
+	@Override
 	public String toString() {
 		return "Shared member";
 	}
@@ -62,6 +64,7 @@ class Rodent3 {
 		m.dispose();
 	}
 
+	@Override
 	public String toString() {
 		return "Rodent";
 	}
@@ -76,18 +79,22 @@ class Mouse3 extends Rodent3 {
 		print("Mouse constructor");
 	}
 
+	@Override
 	public void hop() {
 		print("Mouse hopping");
 	}
 
+	@Override
 	public void scurry() {
 		print("Mouse scurrying");
 	}
 
+	@Override
 	public void reproduce() {
 		print("Making more Mice");
 	}
 
+	@Override
 	public String toString() {
 		return "Mouse";
 	}
@@ -104,18 +111,22 @@ class Gerbil3 extends Rodent3 {
 		print("Gerbil constructor");
 	}
 
+	@Override
 	public void hop() {
 		print("Gerbil hopping");
 	}
 
+	@Override
 	public void scurry() {
 		print("Gerbil scurrying");
 	}
 
+	@Override
 	public void reproduce() {
 		print("Making more Gerbils");
 	}
 
+	@Override
 	public String toString() {
 		return "Gerbil";
 	}
@@ -132,18 +143,22 @@ class Hamster3 extends Rodent3 {
 		print("Hamster constructor");
 	}
 
+	@Override
 	public void hop() {
 		print("Hamster hopping");
 	}
 
+	@Override
 	public void scurry() {
 		print("Hamster scurrying");
 	}
 
+	@Override
 	public void reproduce() {
 		print("Making more Hamsters");
 	}
 
+	@Override
 	public String toString() {
 		return "Hamster";
 	}
@@ -157,7 +172,8 @@ public class E14_SharedRodentInitialization {
 				new Gerbil3(sm),
 				new Mouse3(sm),
 		};
-		for (Rodent3 r : rodents)
+		for (Rodent3 r : rodents) {
 			r.dispose();
+		}
 	}
 }

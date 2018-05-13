@@ -16,6 +16,7 @@ interface FastFood {
 
 class FastSandwich extends Sandwich implements FastFood {
 	// 旺盛
+	@Override
 	public void rushOrder() {
 		print("Rushing your sandwich order");
 	}
@@ -23,6 +24,7 @@ class FastSandwich extends Sandwich implements FastFood {
 	/**
 	 * 狼吞虎咽
 	 */
+	@Override
 	public void gobble() {
 		// Chomp：咯咯咬牙  snort：发哼声
 		print("Chomp! Snort! Gobble!");

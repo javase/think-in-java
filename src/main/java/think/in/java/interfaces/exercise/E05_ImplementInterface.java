@@ -5,14 +5,17 @@ import static net.mindview.util.Print.print;
 import think.in.java.interfaces.exercise.ownpackage.AnInterface;
 
 class ImplementInterface implements AnInterface {
+	@Override
 	public void f() {
 		print("ImplementInterface.f");
 	}
 
+	@Override
 	public void g() {
 		print("ImplementInterface.g");
 	}
 
+	@Override
 	public void h() {
 		print("ImplementInterface.h");
 	}

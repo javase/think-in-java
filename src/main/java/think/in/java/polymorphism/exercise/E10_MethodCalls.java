@@ -24,6 +24,7 @@ class Inherited extends TwoMethods {
 //		m2();
 //	}
 
+	@Override
 	public void m2() {
 		print("子类方法 Inside Inherited.m2");
 	}

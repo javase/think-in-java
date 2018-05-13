@@ -7,6 +7,7 @@ import think.in.java.innerclasses.exercise.exercise6.SimpleInterface;
 class Outer5 {
 
 	private class Inner implements SimpleInterface {
+		@Override
 		public void f() {
 			System.out.println("Outer5.Inner.f");
 		}
