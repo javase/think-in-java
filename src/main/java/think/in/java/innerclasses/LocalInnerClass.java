@@ -3,6 +3,7 @@ package think.in.java.innerclasses;//: innerclasses/LocalInnerClass.java
 
 import static net.mindview.util.Print.*;
 
+
 interface Counter {
 	int next();
 }
@@ -11,6 +12,13 @@ interface Counter {
  * 既然局部内部类的名字在方法外是不可见的，那为什么我们仍然使用局部内部类而不是匿名内部类呢？ 唯一的理由是：
  *     * 我们需要一个已命名的构造器，或者需要重载构造器，而匿名内部类只能用于实例初始化
  *     * 使用局部内部类而不使用匿名内部类的另一个理由就是：需要不止一个该内部类的对象
+ *
+ * Java编译器生成的.class文件分别为：
+ * Counter.class
+ * LocalInnerClass.class
+ * LocalInnerClass$1.class
+ * LocalInnerClass$1LocalCounter01.class
+ * LocalInnerClass$1LocalCounter02.class
  */
 public class LocalInnerClass {
 
@@ -21,8 +29,8 @@ public class LocalInnerClass {
 		 * 局部内部类、在方法体里面
 		 * A local inner class:
 		 */
-		class LocalCounter implements Counter {
-			public LocalCounter() {
+		class LocalCounter01 implements Counter {
+			public LocalCounter01() {
 				// Local inner class can have a constructor
 				print("LocalCounter()");
 			}
@@ -33,7 +41,7 @@ public class LocalInnerClass {
 			 * 可以对构造器进行重载
 			 * @param i
 			 */
-			public LocalCounter(int i) {
+			public LocalCounter01(int i) {
 				this.i = i;
 			}
 
@@ -71,7 +79,7 @@ public class LocalInnerClass {
 				return count++;
 			}
 		}
-		return new LocalCounter();
+		return new LocalCounter01();
 	}
 
 	/**
