@@ -13,7 +13,10 @@ interface Selector {
 }
 
 public class Sequence {
-	private Object[] items; // 内部持有一个Object数组
+	/**
+	 * 内部持有一个Object数组
+	 */
+	private Object[] items;
 
 	private int next = 0;
 
@@ -63,10 +66,11 @@ public class Sequence {
 
 
 	public static void main(String[] args) {
-		Sequence sequence = new Sequence(10);
+		int size = 15;
+		Sequence sequence = new Sequence(size);
 
-		for (int i = 0; i < 10; i++) {
-			sequence.add(String.format("我是第%d个元素", i + 1));
+		for (int i = 0; i < size; i++) {
+			sequence.add(String.format("第%d个元素", i + 1));
 		}
 		Selector selector = sequence.getSelector();
 		while (!selector.end()) {
