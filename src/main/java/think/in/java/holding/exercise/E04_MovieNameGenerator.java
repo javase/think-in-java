@@ -14,7 +14,7 @@ class MovieNameGenerator {
 
 	public String next() {
 		String r = characters[next];
-		print(next + 1);
+		print(String.format("位置:%s", next + 1));
 		// 字符列表中的字符用完之后，循环到这个字符列表的开始处
 		next = (next + 1) % characters.length;
 		return r;
