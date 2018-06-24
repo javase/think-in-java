@@ -29,7 +29,6 @@ class Controller {
 					e.action();
 					// 从列表中移除该对象  it.remove()并没有移除eventList中的元素
 					//it.remove();
-
 					eventList.remove(e);
 				}
 			}// end Iterator while
