@@ -17,17 +17,22 @@ class Controller {
 
 	public void run() {
 		while (eventList.size() > 0) {
-			Iterator<BaseEvent> it = new LinkedList<BaseEvent>(eventList).iterator();
+
+			// 注意：这里复制了一份eventList
+			List newList = new LinkedList<BaseEvent>(eventList);
+			Iterator<BaseEvent> it = newList.iterator();
+
 			while (it.hasNext()) {
 				BaseEvent e = it.next();
 				if (e.ready()) {
 					System.out.println(String.format("%s-%s", DateUtils.getNowDateStr("yyyy-MM-dd HH:mm:ss"), e.toString()));
 					e.action();
-//					it.remove();
-					// 从列表中移除该对象  it.remove()并没有移除
+					// 从列表中移除该对象  it.remove()并没有移除eventList中的元素
+					//it.remove();
+
 					eventList.remove(e);
 				}
-			}
+			}// end Iterator while
 		}// end while
 	}
 }
