@@ -1,4 +1,4 @@
-package think.in.java.operators;
+package operators;
 
 import org.junit.Test;
 

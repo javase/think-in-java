@@ -6,6 +6,9 @@ package net.mindview.util;
 import java.io.*;
 import java.util.*;
 
+/**
+ * 继承自ArrayList
+ */
 public class TextFile extends ArrayList<String> {
 	// Read a file as a single string:
 	public static String read(String fileName) {
