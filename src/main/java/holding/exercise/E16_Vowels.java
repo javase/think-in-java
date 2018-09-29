@@ -32,6 +32,7 @@ public class E16_Vowels {
 		TextFile textFile = new TextFile("src/main/java/holding/exercise/E16_Vowels.java", "\\W+");
 		for (String word : textFile) {
 			wordVowels = 0;
+			// 对单词中的每一个字母进行判断
 			for (char letter : word.toCharArray()) {
 				if (vowels.contains(letter)) {
 					wordVowels++;
@@ -39,7 +40,7 @@ public class E16_Vowels {
 			}
 			if (!processedWords.contains(word)) {
 				processedWords.add(word);
-				print(word + " has " + wordVowels + " vowel(s)");
+				printlnf("[%s] has %d vowel(s)", word, wordVowels);
 			}
 			fileVowels += wordVowels;
 		}// end for
