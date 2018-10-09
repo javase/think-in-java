@@ -5,16 +5,17 @@ import static net.mindview.util.Print.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import net.mindview.util.TextFile;
 
 /**
- * 追踪每个元音字母的数量
+ * 追踪每个元音字母的数量  改进：提取公用的更新map中value数量的方法
  * created at 2018-09-29 17:15
  * @author lerry
  */
-public class E20_VowelsInfo {
+public class E20_1_VowelsInfo {
 
 	/**
 	 * 元音字母的Set集合
@@ -22,6 +23,22 @@ public class E20_VowelsInfo {
 	private final static Set<Character> vowels =
 			new HashSet<Character>(Arrays.asList('a', 'e', 'o', 'u',
 					'i', 'A', 'E', 'O', 'U', 'I'));
+
+	/**
+	 * 如果存在key，则累加1；否则，新加如改字符，并初始化为1
+	 * @param map
+	 * @param letter
+	 */
+	static void updateMapState(Map<Character, Integer> map, char letter) {
+		// 累加每个元音字母出现的次数
+		Integer integer = map.get(letter);
+		if (integer == null) {
+			map.put(letter, 1);
+		}
+		else {
+			map.put(letter, ++integer);
+		}
+	}
 
 	public static void main(String[] args) {
 		HashMap<Character, Integer> everyVowelMap = new HashMap<>();
@@ -38,7 +55,7 @@ public class E20_VowelsInfo {
 		int wordVowels;
 
 		// 所有单词的集合
-		TextFile textFile = new TextFile("src/main/java/holding/exercise/E20_VowelsInfo.java", "\\W+");
+		TextFile textFile = new TextFile("src/main/java/holding/exercise/E20_1_VowelsInfo.java", "\\W+");
 
 		HashMap<Character, Integer> eachInWord = null;
 		// 处理每一个单词
@@ -54,21 +71,9 @@ public class E20_VowelsInfo {
 					wordVowels++;
 
 					// 累加每个元音字母出现的次数
-					Integer allVowelsCount = everyVowelMap.get(letter);
-					if (allVowelsCount == null) {
-						everyVowelMap.put(letter, 1);
-					}
-					else {
-						everyVowelMap.put(letter, ++allVowelsCount);
-					}
+					updateMapState(everyVowelMap, letter);
 
-					Integer eachInteger = eachInWord.get(letter);
-					if (eachInteger == null) {
-						eachInWord.put(letter, 1);
-					}
-					else {
-						eachInWord.put(letter, ++eachInteger);
-					}
+					updateMapState(eachInWord, letter);
 
 				}// end if
 			}// end for
