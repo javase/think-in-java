@@ -9,7 +9,7 @@ import java.util.TreeMap;
 import net.mindview.util.TextFile;
 
 /**
- * 拿到上一个联系的Map，按照它们在最初的文件中出现的顺序重新创建单词顺序
+ * 拿到上一个练习的Map，按照它们在最初的文件中出现的顺序重新创建单词顺序
  */
 public class E26_WordsInfo4 {
 	public static void main(String[] args) {
