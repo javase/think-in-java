@@ -1,10 +1,11 @@
 package holding.exercise;
 
+
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Command {
-    Command(String value) {
+class Command01 {
+    Command01(String value) {
         this.value = value;
     }
 
@@ -18,7 +19,7 @@ class Command {
 class SecondClass {
     private Queue queue;
 
-    public Command fill(Command command) {
+    public Command01 fill(Command01 command) {
         if (queue == null) {
             queue = new LinkedList();
         }
@@ -34,18 +35,19 @@ class SecondClass {
 public class E27 {
     // 消耗掉queue的对象，并调用它们的operation方法
     public static void consume(Queue queue) {
-        Command command = (Command) queue.poll();
+        Command01 command = (Command01) queue.poll();
         command.operation();
     }
 
     public static void main(String[] args) {
-        Command command01 = new Command("one");
-        Command command02 = new Command("two");
+        Command01 command01 = new Command01("one");
+        Command01 command02 = new Command01("two");
         SecondClass secondClass = new SecondClass();
         secondClass.fill(command01);
         secondClass.fill(command02);
         Queue queue = secondClass.getQueue();
 
+        // 一种遍历方法
         for (int i = 0; i <= queue.size(); i++) {
             consume(queue);
         }
