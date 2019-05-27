@@ -82,9 +82,15 @@ class CollectionSequence3 extends PetSequence implements Collection<Pet> {
 		return result;
 	}
 
+
 	@Override
 	public <T> T[] toArray(T[] a) {
 		if (a.length < pets.length) {
+			/*
+			int[] x = {length};
+			等效于：
+       		Array.newInstance(componentType, x);
+			 */
 			a = (T[]) java.lang.reflect.Array.newInstance(a.getClass().getComponentType(), pets.length);
 
 		}
