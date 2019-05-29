@@ -1,13 +1,17 @@
 package holding;//: holding/NonCollectionSequence.java
 
-import typeinfo.pets.*;
+import java.util.Iterator;
 
-import java.util.*;
+import typeinfo.pets.Pet;
+import typeinfo.pets.Pets;
 
 class PetSequence {
 	protected Pet[] pets = Pets.createArray(8);
 }
 
+/**
+ * 不继承AbstractCollection类
+ */
 public class NonCollectionSequence extends PetSequence {
 
 	public Iterator<Pet> iterator() {

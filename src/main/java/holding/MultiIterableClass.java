@@ -1,8 +1,16 @@
 package holding;//: holding/MultiIterableClass.java
 // Adding several Adapter Methods.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
+/**
+ * 在此类中，分别实现了倒序和随机顺序的Iterable
+ */
 public class MultiIterableClass extends IterableClass {
 	public Iterable<String> reversed() {
 		return new Iterable<String>() {
