@@ -3,7 +3,7 @@ package strings.exercise.hua;
 import net.mindview.util.Print;
 
 /**
- * 我们发现，q对象本身，在传入方法前、后，并没有改变。如果要获取改变后的值，需要重新接收方法返回值的新对象。
+ * 我们发现，[String]q对象本身，在传入方法前、后，并没有改变。如果要获取改变后的值，需要重新接收方法返回值的新对象。
  * created at 2019-06-13 12:41
  * @author lerry
  */
