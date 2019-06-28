@@ -22,6 +22,7 @@ class MyException2 extends Exception {
 		return x;
 	}
 
+	@Override
 	public String getMessage() {
 		return "Detail Message: " + x + " " + super.getMessage();
 	}
