@@ -3,6 +3,9 @@ package strings;//: strings/Turtle.java
 import java.io.PrintStream;
 import java.util.Formatter;
 
+/**
+ * 包含了一个Formatter成员变量，用来格式化输出
+ */
 public class Turtle {
 
 	private String name;
@@ -14,8 +17,13 @@ public class Turtle {
 		this.f = f;
 	}
 
+	/**
+	 * 移动到哪里
+	 * @param x
+	 * @param y
+	 */
 	public void move(int x, int y) {
-		f.format("%s The Turtle is at (%d,%d)\n", name, x, y);
+		f.format("The Turtle [%s] is at (%d,%d)\n", name, x, y);
 	}
 
 	public static void main(String[] args) {
