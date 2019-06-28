@@ -40,4 +40,9 @@ public class Print {
 		System.out.printf(format, args);
 		System.out.println();
 	}
+
+	public static void printlnf(Object obj, Object... args) {
+		System.out.printf(obj.toString(), args);
+		System.out.println();
+	}
 } ///:~
