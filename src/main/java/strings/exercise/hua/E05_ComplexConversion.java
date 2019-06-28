@@ -1,5 +1,7 @@
 package strings.exercise.hua;
 
+import static net.mindview.util.Print.*;
+
 import java.util.Formatter;
 import java.util.Locale;
 
@@ -29,6 +31,10 @@ public class E05_ComplexConversion {
 		formatter.format(Locale.FRANCE, "e[20.4f]=%20.4f\n", Math.E);
 		formatter.format(Locale.FRANCE, "e[.4f限制4位精度] =%.4f\n", Math.E);
 		formatter.format("[+10.4f]中，%s代表符号'+'，%s表示宽度占位符，%s表示精度\n", "+", 10, ".4");
+
+		printlnf("------------------------------");
+		formatter.format("%1$(,010d\n", 156);
+		formatter.format("在指定数字前，添加0补全不足的位数： %1$010d\n", 156);
 
 	}
 }

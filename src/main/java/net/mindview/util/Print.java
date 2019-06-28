@@ -31,6 +31,11 @@ public class Print {
 		return System.out.printf(format, args);
 	}
 
+	/**
+	 * 格式化输出后，进行换行
+	 * @param format
+	 * @param args
+	 */
 	public static void printlnf(String format, Object... args) {
 		System.out.printf(format, args);
 		System.out.println();

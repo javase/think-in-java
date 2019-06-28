@@ -7,7 +7,16 @@ import java.util.Formatter;
 import java.util.Locale;
 
 /**
+ * <pre>
  * 尽可能复杂的格式化表达式
+ * 通用、字符和数字类型的格式说明符具有以下语法:
+ *      %[argument_index$][flags][width][.precision]conversion
+ *      argument_index$ 参数序号
+ *      flags 标志 如：-、+、0、，/（ 等
+ *      width 宽度
+ *      .precision 小数位数
+ *      conversion 格式类型
+ * </pre>
  */
 public class E05_ComplexConversion {
 	public static void main(String[] args) {
@@ -18,8 +27,10 @@ public class E05_ComplexConversion {
 		f.format("c: %1$-10c\n", u);
 		f.format("b: %1$-10.10b\n", u);
 		f.format("h: %1$-10.10h\n", u);
+
+		printlnf("------------------------------");
 		int v = 1000;
-		print("v = 1000");
+		printlnf("v = %s", v);
 		f.format("d 1: %1$(,0+10d\n", v);
 		f.format("d 2: %1$-(, 10d\n", v);
 		f.format("d 3, v = -v: %1$-(, 10d\n", -v);
@@ -28,6 +39,8 @@ public class E05_ComplexConversion {
 //		f.format("s: %1$#-10.10s\n", v);
 		f.format("x: %1$-#10x\n", v);
 		f.format("h: %1$-10.10h\n", v);
+
+		printlnf("------------------------------");
 		BigInteger w = new BigInteger("50000000000000");
 		print("w = new BigInteger(\"50000000000000\")");
 		f.format("d 1: %1$(,0+10d\n", w);
@@ -39,6 +52,8 @@ public class E05_ComplexConversion {
 		f.format("x 2: %1$-( 10x\n", w);
 		f.format("x 3, w = -w: %1$-( 10x\n", w.negate());
 		f.format("h: %1$-10.10h\n", w);
+
+		printlnf("------------------------------");
 		double x = 179.543;
 		print("x = 179.543");
 		f.format("b: %1$-10.10b\n", x);
@@ -50,18 +65,24 @@ public class E05_ComplexConversion {
 		f.format("e 2: %1$#(- 10.2e\n", x);
 		f.format("e 3, x = -x: %1$#(0+10.2e\n", -x);
 		f.format("h: %1$-10.10h\n", x);
+
+		printlnf("------------------------------");
 		Object y = new Object();
 		print("y = new Object()");
 		f.format("b: %1$-10.10b\n", y);
 //		f.format("s: %1$#-10.10s\n", y);
 		f.format("h: %1$-10.10h\n", y);
+		f.format("h[toString()]:%s\n",y);
+
+		printlnf("------------------------------");
 		boolean z = false;
 		print("z = false");
 		f.format("b: %1$-10.10b\n", z);
 //		f.format("s: %1$#-10.10s\n", z); f.format("h: %1$-10.10h\n", z);
 		// A special no argument conversion type
-		f.format("%%: %-10%");
-		printlnf("");
+		printlnf("------------------------------");
+		f.format("%%: %-10%\n");
+		printlnf("------------------------------");
 	}
 } /* Output: (95% match)
 u = 'a'
