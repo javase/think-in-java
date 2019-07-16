@@ -14,8 +14,8 @@ public class E07_SentenceChecker {
 		String content02 = "The first character must be a letter.";
 		String content03 = "the first character must be a letter.";
 
-		printlnf(content01.matches(reg));
-		printlnf(content02.matches(reg));
-		printlnf(content03.matches(reg));
+		printlnf("[%s]是否以大写字母开头，以英文句号结尾？:%s", content01, content01.matches(reg));
+		printlnf("[%s]是否以大写字母开头，以英文句号结尾？:%s", content02, content02.matches(reg));
+		printlnf("[%s]是否以大写字母开头，以英文句号结尾？:%s", content03, content03.matches(reg));
 	}
 }
