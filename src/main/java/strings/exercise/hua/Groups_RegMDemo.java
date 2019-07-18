@@ -1,4 +1,4 @@
-package strings;//: strings/Groups.java
+package strings.exercise.hua;//: strings/Groups.java
 
 import static net.mindview.util.Print.*;
 
@@ -6,11 +6,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * group用法举例  tov¡es
+ * group用法举例
+ * 示例：去掉(?m)和不去掉的区别
+ * 去掉(?m)的正则表达式，将只匹配最后一行
+ * (?m) 表示多行模式（"multi-line mode"），使正则的 ^ 和 $ 匹配字符串中每行的开始和结束
  */
-public class Groups {
+public class Groups_RegMDemo {
 	static public final String POEM =
-			"Twas brillig, and the slithy tovies\n" +
+			"Twas brillig, and the slithy toves\n" +
 					"Did gyre and gimble in the wabe.\n" +
 					"All mimsy were the borogoves,\n" +
 					"And the mome raths outgrabe.\n\n" +
@@ -30,12 +33,24 @@ public class Groups {
 			() 标记一个子表达式的开始和结束位置
 			\s 匹配任何空白字符，包括空格、制表符、换页符等等。(小写s)
 			$ 匹配输入字符串的结尾位置
-			(?m) 表示多行模式（"multi-line mode"），使正则的 ^ 和 $ 匹配字符串中每行的开始和结束
+
 
 		 */
 		Matcher m =
 				Pattern.compile("(?m)(\\S+)\\s+((\\S+)\\s+(\\S+))$")
 						.matcher(POEM);
+		printGroupInfo(m);
+
+		printlnf("----------------------------------------");
+		printlnf("去掉(?m)的正则表达式，将只匹配最后一行");
+		m =
+				Pattern.compile("(\\S+)\\s+((\\S+)\\s+(\\S+))$")
+						.matcher(POEM);
+		printGroupInfo(m);
+		printlnf("\n\n\n");
+	}
+
+	private static void printGroupInfo(Matcher m) {
 		while (m.find()) {
 			for (int j = 0; j <= m.groupCount(); j++) {
 				printnb("[" + m.group(j) + "]");
