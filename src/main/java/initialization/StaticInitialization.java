@@ -1,7 +1,7 @@
 package initialization;//: initialization/StaticInitialization.java
 // Specifying initial values in a class definition.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 class Bowl {
     Bowl(int marker) {

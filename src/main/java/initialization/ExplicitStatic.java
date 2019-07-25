@@ -1,7 +1,7 @@
 package initialization;//: initialization/ExplicitStatic.java
 // Explicit static initialization with the "static" clause.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 class Cup {
     Cup(int marker) {

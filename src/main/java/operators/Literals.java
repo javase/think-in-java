@@ -1,6 +1,6 @@
 package operators;//: operators/Literals.java
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 public class Literals {
     public static void main(String[] args) {

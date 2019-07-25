@@ -1,7 +1,7 @@
 package innerclasses;//: innerclasses/Parcel6.java
 // Nesting a class within a scope.
 
-import static common.Print.print;
+import static net.mindview.util.Print.*;
 
 public class Parcel6 {
 	private void internalTracking(boolean b) {

@@ -1,7 +1,7 @@
 package control;//: control/ForEachInt.java
 
 import static common.Range.*;
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 public class ForEachInt {
     public static void main(String[] args) {

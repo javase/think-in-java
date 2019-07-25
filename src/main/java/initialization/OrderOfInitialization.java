@@ -1,7 +1,7 @@
 package initialization;//: initialization/OrderOfInitialization.java
 // Demonstrates initialization order.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 // When the constructor is called to create a
 // Window object, you'll see a message:

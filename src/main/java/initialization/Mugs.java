@@ -1,7 +1,7 @@
 package initialization;//: initialization/Mugs.java
 // Java "Instance Initialization."
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 class Mug {
     Mug(int marker) {

@@ -6,7 +6,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * <pre>
  * 展示了matches()和lookingAt()的用法
+ * find()倾向于搜索，部分匹配。只要部分找到满足正则表达式即可。
+ * matches()倾向于字符串的完整匹配，部分满足条件不可行。
+ * lookingAt() 部分匹配，总是从第一个字符进行匹配,匹配成功了不再继续匹配，匹配失败了,也不继续匹配。
+ * </pre>
  */
 public class StartEnd {
 	public static String input =

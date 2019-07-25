@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 
 import strings.Groups;
 
+/**
+ * 必要修改正则表达式、使得find()、lookingAt()和matches()都有机会匹配成功。
+ */
 public class E13_StartEnd2 {
 	private static class Display {
 		private boolean regexPrinted = false;
@@ -48,7 +51,7 @@ public class E13_StartEnd2 {
 
 	public static void main(String[] args) {
 		for (String in : Groups.POEM.split("\n")) {
-			print("input : " + in);
+			print("\ninput : " + in);
 			for (String regex : new String[] {"\\w*ere\\w*",
 					"\\w*at", "t\\w+", "T.*?."}) {
 				examine(in, regex);

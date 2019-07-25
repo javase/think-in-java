@@ -1,7 +1,7 @@
 package reusing;//: reusing/Cartoon.java
 // Constructor calls during inheritance.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 class Art {
     Art() {

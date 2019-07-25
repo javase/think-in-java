@@ -1,7 +1,7 @@
 package initialization;//: initialization/PrimitiveOverloading.java
 // Promotion of primitives and overloading.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 public class PrimitiveOverloading {
     void f1(char x) {

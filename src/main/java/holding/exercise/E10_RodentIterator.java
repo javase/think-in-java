@@ -1,6 +1,6 @@
 package holding.exercise;
 
-import static common.Print.print;
+import static net.mindview.util.Print.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

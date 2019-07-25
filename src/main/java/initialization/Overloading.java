@@ -2,7 +2,7 @@ package initialization;//: initialization/Overloading.java
 // Demonstration of both constructor
 // and ordinary method overloading.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 class Tree {
     int height;

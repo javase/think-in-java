@@ -1,7 +1,7 @@
 package reusing;//: reusing/Bath.java
 // Constructor initialization with composition.
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 /**
  * 肥皂

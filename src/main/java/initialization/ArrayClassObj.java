@@ -3,7 +3,7 @@ package initialization;//: initialization/ArrayClassObj.java
 
 import java.util.*;
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 public class ArrayClassObj {
     public static void main(String[] args) {

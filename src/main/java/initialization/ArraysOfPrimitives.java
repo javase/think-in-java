@@ -1,6 +1,6 @@
 package initialization;//: initialization/ArraysOfPrimitives.java
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 public class ArraysOfPrimitives {
     public static void main(String[] args) {

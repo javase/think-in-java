@@ -1,8 +1,8 @@
 package allisobject;
 
-import java.util.Date;
+import static net.mindview.util.Print.*;
 
-import static common.Print.*;
+import java.util.Date;
 
 /**
  * 阅读《java编程思想》写的例子,使用静态导入<br/>

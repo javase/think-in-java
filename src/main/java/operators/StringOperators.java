@@ -1,6 +1,6 @@
 package operators;//: operators/StringOperators.java
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 public class StringOperators {
     public static void main(String[] args) {

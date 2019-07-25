@@ -1,6 +1,6 @@
 package operators;
 
-import static common.Print.*;
+import static net.mindview.util.Print.*;
 
 /**
  * Created by limenghua on 2017/5/26.
