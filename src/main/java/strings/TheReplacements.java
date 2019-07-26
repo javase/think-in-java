@@ -21,6 +21,8 @@ import net.mindview.util.TextFile;
  *     读取TheReplacements文件，然后匹配在/*!符号之间的所有文字。
  *     将存在两个或两个以上空格的地方，缩减为一个空格
  *     删除每行开头部分的空格
+ *     替换首个元音字母为(VOWEL1)
+ *     然后把剩余的元音字母替换为大写格式
  * </pre>
  * created at 2019-07-25 12:44
  * @author lerry
@@ -29,17 +31,19 @@ public class TheReplacements {
 	public static void main(String[] args) throws Exception {
 		String s = TextFile.read("src/main/java/strings/TheReplacements.java");
 		// Match the specially commented block of text above:
-		Matcher mInput =
-				Pattern.compile("/\\*!(.*)!\\*/", Pattern.DOTALL).matcher(s);
+		Matcher mInput = Pattern.compile("/\\*!(.*)!\\*/", Pattern.DOTALL).matcher(s);
 		if (mInput.find()) {
 			s = mInput.group(1); // Captured by parentheses
 		}
 		// Replace two or more spaces with a single space:
+		// 2个或者两个以上空格
 		s = s.replaceAll(" {2,}", " ");
 		// Replace one or more spaces at the beginning of each
 		// line with no spaces. Must enable MULTILINE mode:
+		// X+ 表示匹配一个或多个字母X  匹配每行开头的空格
 		s = s.replaceAll("(?m)^ +", "");
 		print(s);
+		// 将首个原因字母，替换成(VOWEL1)
 		s = s.replaceFirst("[aeiou]", "(VOWEL1)");
 
 		StringBuffer sbuf = new StringBuffer();
@@ -53,7 +57,7 @@ public class TheReplacements {
 		// Put in the remainder of the text:
 		m.appendTail(sbuf);
 
-		print(sbuf);
+		printlnf("\n替换后：\n%s", sbuf);
 	}
 } /* Output:
 Here's a block of text to use as input to
@@ -61,6 +65,8 @@ the regular expression matcher. Note that we'll
 first extract the block of text by looking for
 the special delimiters, then process the
 extracted block.
+
+替换后：
 H(VOWEL1)rE's A blOck Of tExt tO UsE As InpUt tO
 thE rEgUlAr ExprEssIOn mAtchEr. NOtE thAt wE'll
 fIrst ExtrAct thE blOck Of tExt by lOOkIng fOr
