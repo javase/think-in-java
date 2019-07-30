@@ -45,4 +45,23 @@ public class Print {
 		System.out.printf(obj.toString(), args);
 		System.out.println();
 	}
+
+	/**
+	 * 默认为75的宽度
+	 */
+	public static void printALine() {
+		printALine(75);
+	}
+
+	/**
+	 * 打印指定宽度的分隔线
+	 * @param width
+	 */
+	public static void printALine(int width) {
+		StringBuffer sbuf = new StringBuffer();
+		for (int i = 0; i < width; i++) {
+			sbuf.append("-");
+		}
+		printlnf(sbuf);
+	}
 } ///:~
