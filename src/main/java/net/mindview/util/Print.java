@@ -48,6 +48,7 @@ public class Print {
 
 	/**
 	 * 默认为75的宽度
+	 * 打印指定宽度的分隔线
 	 */
 	public static void printALine() {
 		printALine(75);
