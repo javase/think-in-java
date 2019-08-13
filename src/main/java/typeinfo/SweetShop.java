@@ -3,14 +3,23 @@ package typeinfo;//: typeinfo/SweetShop.java
 
 import static net.mindview.util.Print.*;
 
+/**
+ * 糖果
+ */
 class Candy {
 	static { print("Loading Candy"); }
 }
 
+/**
+ * n. 口香糖 英 [gʌm]
+ */
 class Gum {
 	static { print("Loading Gum"); }
 }
 
+/**
+ * n. 饼干；小甜点
+ */
 class Cookie {
 	static { print("Loading Cookie"); }
 }
