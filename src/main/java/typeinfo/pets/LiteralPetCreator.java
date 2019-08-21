@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 使用类字面常量(Pet.class)
+ */
 public class LiteralPetCreator extends PetCreator {
 	// No try block needed.
 	@SuppressWarnings("unchecked")
@@ -16,8 +19,7 @@ public class LiteralPetCreator extends PetCreator {
 					Cymric.class, Rat.class, Mouse.class, Hamster.class));
 
 	// Types for random creation:
-	private static final List<Class<? extends Pet>> types =
-			allTypes.subList(allTypes.indexOf(Mutt.class), allTypes.size());
+	private static final List<Class<? extends Pet>> types = allTypes.subList(allTypes.indexOf(Mutt.class), allTypes.size());
 
 	@Override
 	public List<Class<? extends Pet>> types() {

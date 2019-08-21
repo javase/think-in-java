@@ -4,6 +4,11 @@ package typeinfo.pets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * PetCreator的具体实现
+ * created at 2019-08-21 16:54
+ * @author lerry
+ */
 public class ForNameCreator extends PetCreator {
 	private static List<Class<? extends Pet>> types =
 			new ArrayList<Class<? extends Pet>>();
@@ -24,8 +29,7 @@ public class ForNameCreator extends PetCreator {
 	private static void loader() {
 		try {
 			for (String name : typeNames) {
-				types.add(
-						(Class<? extends Pet>) Class.forName(name));
+				types.add((Class<? extends Pet>) Class.forName(name));
 			}
 		}
 		catch (ClassNotFoundException e) {
