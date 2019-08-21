@@ -2,7 +2,7 @@
 package typeinfo.pets;
 
 /**
- * 单独的、独特的
+ * Individual含义：单独的、独特的
  * 实现了：Comparable接口
  */
 public class Individual implements Comparable<Individual> {
