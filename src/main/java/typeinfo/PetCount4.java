@@ -8,13 +8,16 @@ import typeinfo.pets.Pets;
 
 public class PetCount4 {
 	public static void main(String[] args) {
+		printALine();
 		TypeCounter counter = new TypeCounter(Pet.class);
+
 		for (Pet pet : Pets.createArray(20)) {
 			printnb(pet.getClass().getSimpleName() + " ");
 			counter.count(pet);
 		}
 		printALine();
-		print(counter);
+		printlnf("TypeCounter:\n%s", counter);
+		printALine();
 	}
 } /* Output: (Sample)
 Rat Manx Cymric Mutt Pug Cymric Pug Manx Cymric Rat EgyptianMau Hamster EgyptianMau Mutt Mutt Cymric Mouse Pug Mouse Cymric
