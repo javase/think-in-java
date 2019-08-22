@@ -6,14 +6,18 @@ import java.util.Random;
 
 import typeinfo.factory.Factory;
 
+/**
+ * Part：n. 一部分 / 局部 / 零件 / 片段
+ * created at 2019-08-22 17:17
+ * @author lerry
+ */
 public class Part {
 	@Override
 	public String toString() {
 		return getClass().getSimpleName();
 	}
 
-	static List<Factory<? extends Part>> partFactories =
-			new ArrayList<Factory<? extends Part>>();
+	static List<Factory<? extends Part>> partFactories = new ArrayList<>();
 
 	static {
 		// Collections.addAll() gives an "unchecked generic
