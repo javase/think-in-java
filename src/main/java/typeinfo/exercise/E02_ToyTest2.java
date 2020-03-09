@@ -5,6 +5,9 @@ import static net.mindview.util.Print.*;
 interface HasCPU {
 }
 
+/**
+ * 发烧友  带有CPU
+ */
 class FancierToy extends FancyToy implements HasCPU {
 }
 

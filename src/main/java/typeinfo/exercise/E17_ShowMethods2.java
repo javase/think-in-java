@@ -1,4 +1,4 @@
-package typeinfo;//: typeinfo/ShowMethods.java
+package typeinfo.exercise;
 // Using reflection to show all the methods of a class,
 // even if the methods are defined in the base class.
 // {Args: ShowMethods}
@@ -11,8 +11,9 @@ import java.util.regex.Pattern;
 
 /**
  * 自动展示完整接口的简单工具  把基类型的接口方法也给展示了出来
+ * 练习：修改正则表达式 去掉final和native关键字  备注：\\s可以去除多余的空格
  */
-public class ShowMethods {
+public class E17_ShowMethods2 {
 	private static String usage =
 			"usage:\n" +
 					"ShowMethods qualified.class.name\n" +
@@ -21,7 +22,7 @@ public class ShowMethods {
 					"To search for methods involving 'word'";
 
 	// 去掉了命名修饰符 如： public java.lang.String java.lang.String.toString()  转为： public String toString()
-	private static Pattern p = Pattern.compile("\\w+\\.");
+	private static Pattern p = Pattern.compile("\\w+\\.|final\\s|native\\s");
 
 	/**
 	 * @param args java.lang.String

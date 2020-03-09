@@ -1,4 +1,4 @@
-package typeinfo;//: typeinfo/ShowMethods.java
+package typeinfo.exercise;//: typeinfo/ShowMethods.java
 // Using reflection to show all the methods of a class,
 // even if the methods are defined in the base class.
 // {Args: ShowMethods}
@@ -11,8 +11,9 @@ import java.util.regex.Pattern;
 
 /**
  * 自动展示完整接口的简单工具  把基类型的接口方法也给展示了出来
+ * 练习18: 将ShowMethods变为一个非public的类，并验证合成的默认构造器不会再在输出中出现。
  */
-public class ShowMethods {
+class E18_ShowMethods3 {
 	private static String usage =
 			"usage:\n" +
 					"ShowMethods qualified.class.name\n" +
@@ -46,7 +47,7 @@ public class ShowMethods {
 					print(p.matcher(method.toString()).replaceAll(""));
 				}
 
-				print("\nConstructors:\n");
+				print("\nConstructors(非public的默认构造器不打印出来`a	):\n");
 				for (Constructor ctor : ctors) {
 					print(p.matcher(ctor.toString()).replaceAll(""));
 				}
