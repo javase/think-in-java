@@ -21,7 +21,7 @@ public class ShowMethods {
 					"To search for methods involving 'word'";
 
 	// 去掉了命名修饰符 如： public java.lang.String java.lang.String.toString()  转为： public String toString()
-	private static Pattern p = Pattern.compile("\\w+\\.");
+	public static Pattern p = Pattern.compile("\\w+\\.");
 
 	/**
 	 * @param args java.lang.String

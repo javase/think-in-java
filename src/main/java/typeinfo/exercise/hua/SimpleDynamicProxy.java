@@ -1,7 +1,8 @@
-package typeinfo;//: typeinfo/SimpleDynamicProxy.java
+package typeinfo.exercise.hua;
 
 import static net.mindview.util.Print.*;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -47,6 +48,9 @@ class DynamicProxyHandler implements InvocationHandler {
 
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+		seeProxy(proxy);
+
 		printlnf("\t****invoke方法的参数打印如下： \n\tproxy.getClass():%s \n\tmethod: %s\n\targs:%s", proxy.getClass(), method, Arrays.toString(args));
 		if (args != null) {
 			for (Object arg : args) {
@@ -56,24 +60,30 @@ class DynamicProxyHandler implements InvocationHandler {
 		// 将请求转发给被代理的对象
 		return method.invoke(proxied, args);
 	}
+
+	private void seeProxy(Object proxy) {
+		printALineDouble();
+		printlnf("开始观察proxy对象：");
+		Class proxyClass = proxy.getClass();
+		// 这些对象反映由此Class对象表示的类或接口的所有公共成员方法，包括由类或接口声明的方法以及从超类和超接口继承的方法。
+		Method[] methods = proxyClass.getMethods();
+		// 构造器数组
+		Constructor[] ctors = proxyClass.getConstructors();
+
+		print("\nmethods:\n");
+		for (Method method : methods) {
+			// print(ShowMethods.p.matcher(method.toString()).replaceAll(""));
+			print(method.toString());
+		}
+
+		print("\nConstructors:\n");
+		for (Constructor ctor : ctors) {
+			// print(ShowMethods.p.matcher(ctor.toString()).replaceAll(""));
+			print(ctor.toString());
+		}
+		printlnf("观察proxy对象结束");
+		printALineDouble();
+	}
+
 }
 
- /* Output: (95% match)
-真实对象的调用：
-doSomething
-somethingElse bonobo
-
-
-动态代理对象的调用：
-	****invoke方法的参数打印如下：
-proxy.getClass():class typeinfo.$Proxy0
- method: public abstract void typeinfo.Interface.doSomething()
-args:null
-doSomething
-	****invoke方法的参数打印如下：
-proxy.getClass():class typeinfo.$Proxy0
- method: public abstract void typeinfo.Interface.somethingElse(java.lang.String)
-args:[Ljava.lang.Object;@5b3409f
-  bonobo
-somethingElse bonobo
-*///:~
