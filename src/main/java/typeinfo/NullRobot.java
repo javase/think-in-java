@@ -17,7 +17,12 @@ import net.mindview.util.Null;
  */
 public class NullRobot {
 	/**
+	 * <pre>
 	 * 通过动态代理、创建一个空的机器人对象
+	 * 	 * 可以对照一下jdk8的 Optional 类
+	 * 	 * private static final Optional<?> EMPTY = new Optional<>();
+	 * 	 * Optional类没有对真实对象做代理，用另一种包含的方式，来应对null的问题
+	 * </pre>
 	 * @param type
 	 * @return
 	 */
