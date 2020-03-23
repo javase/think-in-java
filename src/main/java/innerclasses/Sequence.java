@@ -1,17 +1,6 @@
 package innerclasses;
 
 
-/**
- * 迭代器接口
- */
-interface Selector {
-	boolean end();
-
-	Object current();
-
-	void next();
-}
-
 public class Sequence {
 	/**
 	 * 内部持有一个Object数组
@@ -78,6 +67,17 @@ public class Sequence {
 			selector.next();
 		}
 	}// end main method
+}
+
+/**
+ * 迭代器接口
+ */
+interface Selector {
+	boolean end();
+
+	Object current();
+
+	void next();
 }
 
 /**
