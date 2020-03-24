@@ -13,11 +13,13 @@ class MixinProxy implements InvocationHandler {
         String methodName = method.getName();
         // The first interface in the map
         // implements the method.
-        if (!delegatesByMethod.containsKey(methodName))
-          delegatesByMethod.put(methodName, pair.first);
+        if (!delegatesByMethod.containsKey(methodName)) {
+			delegatesByMethod.put(methodName, pair.first);
+		}
       }
     }
   }	
+  @Override
   public Object invoke(Object proxy, Method method,
     Object[] args) throws Throwable {
     String methodName = method.getName();

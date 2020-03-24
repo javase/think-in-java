@@ -12,18 +12,20 @@ public class Fill2 {
   // Classtoken version:
   public static <T> void fill(Addable<T> addable,
   Class<? extends T> classToken, int size) {
-    for(int i = 0; i < size; i++)
-      try {
-        addable.add(classToken.newInstance());
-      } catch(Exception e) {
-        throw new RuntimeException(e);
-      }
+    for(int i = 0; i < size; i++) {
+		try {
+		  addable.add(classToken.newInstance());
+		} catch(Exception e) {
+		  throw new RuntimeException(e);
+		}
+	}
   }
   // Generator version:
   public static <T> void fill(Addable<T> addable,
   Generator<T> generator, int size) {
-    for(int i = 0; i < size; i++)
-      addable.add(generator.next());
+    for(int i = 0; i < size; i++) {
+		addable.add(generator.next());
+	}
   }
 }
 
@@ -34,6 +36,7 @@ class AddableCollectionAdapter<T> implements Addable<T> {
   public AddableCollectionAdapter(Collection<T> c) {
     this.c = c;
   }
+  @Override
   public void add(T item) { c.add(item); }
 }
 	
@@ -49,6 +52,7 @@ class Adapter {
 // Make a SimpleQueue Addable using inheritance:
 class AddableSimpleQueue<T>
 extends SimpleQueue<T> implements Addable<T> {
+  @Override
   public void add(T item) { super.add(item); }
 }
 	
@@ -62,16 +66,18 @@ class Fill2Test {
     // Helper method captures the type:
     Fill2.fill(Adapter.collectionAdapter(carrier),
       Latte.class, 2);
-    for(Coffee c: carrier)
-      print(c);
+    for(Coffee c: carrier) {
+		print(c);
+	}
     print("----------------------");
     // Use an adapted class:
     AddableSimpleQueue<Coffee> coffeeQueue =
       new AddableSimpleQueue<Coffee>();
     Fill2.fill(coffeeQueue, Mocha.class, 4);
     Fill2.fill(coffeeQueue, Latte.class, 1);
-    for(Coffee c: coffeeQueue)
-      print(c);
+    for(Coffee c: coffeeQueue) {
+		print(c);
+	}
   }
 } /* Output:
 Coffee 0

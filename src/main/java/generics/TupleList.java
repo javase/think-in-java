@@ -10,8 +10,9 @@ extends ArrayList<FourTuple<A,B,C,D>> {
       new TupleList<Vehicle, Amphibian, String, Integer>();
     tl.add(TupleTest.h());
     tl.add(TupleTest.h());
-    for(FourTuple<Vehicle,Amphibian,String,Integer> i: tl)
-      System.out.println(i);
+    for(FourTuple<Vehicle,Amphibian,String,Integer> i: tl) {
+		System.out.println(i);
+	}
   }
 } /* Output: (75% match)
 (Vehicle@11b86e7, Amphibian@35ce36, hi, 47)

@@ -1,7 +1,5 @@
 //: generics/decorator/Decoration.java
 package generics.decorator;
-import java.util.*;
-
 class Basic {
   private String value;
   public void set(String val) { value = val; }
@@ -11,7 +9,9 @@ class Basic {
 class Decorator extends Basic {
   protected Basic basic;
   public Decorator(Basic basic) { this.basic = basic; }
+  @Override
   public void set(String val) { basic.set(val); }
+  @Override
   public String get() { return basic.get(); }
 }	
 
@@ -19,7 +19,8 @@ class TimeStamped extends Decorator {
   private final long timeStamp;
   public TimeStamped(Basic basic) {
     super(basic);
-    timeStamp = new Date().getTime();
+    // timeStamp = new Date().getTime();
+    timeStamp = System.currentTimeMillis();
   }
   public long getStamp() { return timeStamp; }
 }

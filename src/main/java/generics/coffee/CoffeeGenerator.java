@@ -7,8 +7,27 @@ import java.util.Random;
 
 import net.mindview.util.Generator;
 
+/**
+ * 15.3 泛型接口
+ * 可以随机生成不同类型的咖啡对象
+ * 实现了Iterable接口，可以在循环语句中使用
+ * created at 2020-03-24 08:41
+ * @author lerry
+ */
 public class CoffeeGenerator
 		implements Generator<Coffee>, Iterable<Coffee> {
+
+
+	public static void main(String[] args) {
+		CoffeeGenerator gen = new CoffeeGenerator();
+		for (int i = 0; i < 5; i++) {
+			System.out.println(gen.next());
+		}
+		for (Coffee c : new CoffeeGenerator(5)) {
+			System.out.println(c);
+		}
+	}
+
 	private Class[] types = {Latte.class, Mocha.class,
 			Cappuccino.class, Americano.class, Breve.class,};
 
@@ -24,6 +43,7 @@ public class CoffeeGenerator
 		size = sz;
 	}
 
+	@Override
 	public Coffee next() {
 		try {
 			return (Coffee)
@@ -38,15 +58,18 @@ public class CoffeeGenerator
 	class CoffeeIterator implements Iterator<Coffee> {
 		int count = size;
 
+		@Override
 		public boolean hasNext() {
 			return count > 0;
 		}
 
+		@Override
 		public Coffee next() {
 			count--;
 			return CoffeeGenerator.this.next();
 		}
 
+		@Override
 		public void remove() { // Not implemented
 			throw new UnsupportedOperationException();
 		}
@@ -54,17 +77,11 @@ public class CoffeeGenerator
 
 	;
 
+	@Override
 	public Iterator<Coffee> iterator() {
 		return new CoffeeIterator();
 	}
 
-	public static void main(String[] args) {
-		CoffeeGenerator gen = new CoffeeGenerator();
-		for (int i = 0; i < 5; i++)
-			System.out.println(gen.next());
-		for (Coffee c : new CoffeeGenerator(5))
-			System.out.println(c);
-	}
 } /* Output:
 Americano 0
 Latte 1

@@ -13,6 +13,7 @@ class Foo2<T> {
 }
 
 class IntegerFactory implements FactoryI<Integer> {
+  @Override
   public Integer create() {
     return new Integer(0);
   }
@@ -20,7 +21,8 @@ class IntegerFactory implements FactoryI<Integer> {
 
 class Widget {
   public static class Factory implements FactoryI<Widget> {
-    public Widget create() {
+    @Override
+	public Widget create() {
       return new Widget();
     }
   }

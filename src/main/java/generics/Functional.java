@@ -20,8 +20,9 @@ public class Functional {
     Iterator<T> it = seq.iterator();
     if(it.hasNext()) {
       T result = it.next();
-      while(it.hasNext())
-        result = combiner.combine(result, it.next());
+      while(it.hasNext()) {
+		  result = combiner.combine(result, it.next());
+	  }
       return result;
     }
     // If seq is the empty list:
@@ -33,8 +34,9 @@ public class Functional {
   // returned at the end.
   public static <T> Collector<T>
   forEach(Iterable<T> seq, Collector<T> func) {
-    for(T t : seq)
-      func.function(t);
+    for(T t : seq) {
+		func.function(t);
+	}
     return func;
   }
   // Creates a list of results by calling a
@@ -42,8 +44,9 @@ public class Functional {
   public static <R,T> List<R>
   transform(Iterable<T> seq, UnaryFunction<R,T> func) {
     List<R> result = new ArrayList<R>();
-    for(T t : seq)
-      result.add(func.function(t));
+    for(T t : seq) {
+		result.add(func.function(t));
+	}
     return result;
   }
   // Applies a unary predicate to each item in a sequence,
@@ -51,38 +54,45 @@ public class Functional {
   public static <T> List<T>
   filter(Iterable<T> seq, UnaryPredicate<T> pred) {
     List<T> result = new ArrayList<T>();
-    for(T t : seq)
-      if(pred.test(t))
-        result.add(t);
+    for(T t : seq) {
+		if(pred.test(t)) {
+			result.add(t);
+		}
+	}
     return result;
   }
   // To use the above generic methods, we need to create
   // function objects to adapt to our particular needs:
   static class IntegerAdder implements Combiner<Integer> {
+    @Override
     public Integer combine(Integer x, Integer y) {
       return x + y;
     }
   }
   static class
   IntegerSubtracter implements Combiner<Integer> {
+    @Override
     public Integer combine(Integer x, Integer y) {
       return x - y;
     }
   }
   static class
   BigDecimalAdder implements Combiner<BigDecimal> {
+    @Override
     public BigDecimal combine(BigDecimal x, BigDecimal y) {
       return x.add(y);
     }
   }
   static class
   BigIntegerAdder implements Combiner<BigInteger> {
+    @Override
     public BigInteger combine(BigInteger x, BigInteger y) {
       return x.add(y);
     }
   }
   static class
   AtomicLongAdder implements Combiner<AtomicLong> {
+    @Override
     public AtomicLong combine(AtomicLong x, AtomicLong y) {
       // Not clear whether this is meaningful:
       return new AtomicLong(x.addAndGet(y.get()));
@@ -92,6 +102,7 @@ public class Functional {
   // (Units in the last place):
   static class BigDecimalUlp
   implements UnaryFunction<BigDecimal,BigDecimal> {
+    @Override
     public BigDecimal function(BigDecimal x) {
       return x.ulp();
     }
@@ -100,6 +111,7 @@ public class Functional {
   implements UnaryPredicate<T> {
     private T bound;
     public GreaterThan(T bound) { this.bound = bound; }
+    @Override
     public boolean test(T x) {
       return x.compareTo(bound) > 0;
     }
@@ -107,10 +119,12 @@ public class Functional {
   static class MultiplyingIntegerCollector
   implements Collector<Integer> {
     private Integer val = 1;
+    @Override
     public Integer function(Integer x) {
       val *= x;
       return val;
     }
+    @Override
     public Integer result() { return val; }
   }
   public static void main(String[] args) {

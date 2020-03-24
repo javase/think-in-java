@@ -12,17 +12,20 @@ public class Fill {
   Class<? extends T> classToken, int size) {
     for(int i = 0; i < size; i++)
       // Assumes default constructor:
-      try {
-        collection.add(classToken.newInstance());
-      } catch(Exception e) {
-        throw new RuntimeException(e);
-      }
+	{
+		try {
+		  collection.add(classToken.newInstance());
+		} catch(Exception e) {
+		  throw new RuntimeException(e);
+		}
+	}
   }
 }
 
 class Contract {
   private static long counter = 0;
   private final long id = counter++;
+  @Override
   public String toString() {
     return getClass().getName() + " " + id;
   }
@@ -35,8 +38,9 @@ class FillTest {
     List<Contract> contracts = new ArrayList<Contract>();
     Fill.fill(contracts, Contract.class, 3);
     Fill.fill(contracts, TitleTransfer.class, 2);
-    for(Contract c: contracts)
-      System.out.println(c);
+    for(Contract c: contracts) {
+		System.out.println(c);
+	}
     SimpleQueue<Contract> contractQueue =
       new SimpleQueue<Contract>();
     // Won't work. fill() is not generic enough:
