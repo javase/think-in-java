@@ -26,6 +26,19 @@ public class StoryGenerator implements Iterable<StoryCharacters>, Generator<Stor
 			printlnf(story);
 		}
 	}
+	/* Output:
+LuZhiShen 0 is a good guy
+ZhenGuanXi 1 is a bad guy
+ChaoGai 2 is a good guy
+ZhenGuanXi 3 is a bad guy
+ChaoGai 4 is a good guy
+===========================================================================
+LuZhiShen 5 is a good guy
+ZhenGuanXi 6 is a bad guy
+ChaoGai 7 is a good guy
+ZhenGuanXi 8 is a bad guy
+ChaoGai 9 is a good guy
+	 *///:~
 
 	private Class<?>[] classArray = {SongJiang.class, ChaoGai.class, LuZhiShen.class, JiangMenShen.class, XiMenQing.class, ZhenGuanXi.class};
 
