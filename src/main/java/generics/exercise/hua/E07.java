@@ -43,7 +43,7 @@ public class E07 implements Iterable<Integer> {
 	}
 
 	public static void main(String[] args) {
-		E07 e07 = new E07(10);
+		E07 e07 = new E07(18);
 		for (Integer integer : e07) {
 			printlnf("%s\t", integer);
 		}

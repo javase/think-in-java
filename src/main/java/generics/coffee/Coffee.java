@@ -7,6 +7,7 @@ package generics.coffee;
  * @author lerry
  */
 public class Coffee {
+
 	private static long counter = 0;
 
 	private final long id = counter++;

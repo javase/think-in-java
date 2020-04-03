@@ -2,6 +2,8 @@
 // Generate different types of Coffee:
 package generics.coffee;
 
+import static net.mindview.util.Print.*;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -23,6 +25,7 @@ public class CoffeeGenerator
 		for (int i = 0; i < 5; i++) {
 			System.out.println(gen.next());
 		}
+		printALineDouble();
 		for (Coffee c : new CoffeeGenerator(5)) {
 			System.out.println(c);
 		}
