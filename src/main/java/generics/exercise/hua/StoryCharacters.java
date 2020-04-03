@@ -9,7 +9,7 @@ package generics.exercise.hua;
 public class StoryCharacters {
 
 	/**
-	 * 静态的
+	 * 静态的  静态对象只初始化一次
 	 */
 	public static long counter = 0;
 
