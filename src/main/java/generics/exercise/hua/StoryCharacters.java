@@ -17,12 +17,12 @@ public class StoryCharacters {
 
 	public static final long id = counter++;
 
-	public StoryCharacters() {
-		printlnf("初始化StoryCharacters对象，现在的counter计数器变量值为：[%s]", counter);
-	}
-
 	@Override
 	public String toString() {
 		return this.getClass().getSimpleName() + " " + id;
+	}
+
+	public StoryCharacters() {
+		printlnf("初始化StoryCharacters对象，现在的counter计数器变量值为：[%s]", counter);
 	}
 }
