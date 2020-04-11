@@ -10,6 +10,15 @@ import static net.mindview.util.Print.*;
  */
 public class E09_GenericMethods2 {
 
+	/**
+	 * 多种类型参数的类型方法
+	 * @param a
+	 * @param b
+	 * @param c
+	 * @param <A>
+	 * @param <B>
+	 * @param <C>
+	 */
 	public <A, B, C> void f(A a, B b, C c) {
 		System.out.println(a.getClass().getName());
 		System.out.println(b.getClass().getName());

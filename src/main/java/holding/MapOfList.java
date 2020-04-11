@@ -1,11 +1,21 @@
 //: holding/MapOfList.java
 package holding;
 
-import typeinfo.pets.*;
-
-import java.util.*;
-
 import static net.mindview.util.Print.*;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import typeinfo.pets.Cat;
+import typeinfo.pets.Cymric;
+import typeinfo.pets.Dog;
+import typeinfo.pets.Mutt;
+import typeinfo.pets.Person;
+import typeinfo.pets.Pet;
+import typeinfo.pets.Pug;
+import typeinfo.pets.Rat;
 
 /**
  * 我们能够很容易地将容器组合起来从而快速地生成强大的数据结构

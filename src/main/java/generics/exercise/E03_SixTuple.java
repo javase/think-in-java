@@ -1,6 +1,7 @@
 package generics.exercise;
 
 import net.mindview.util.FiveTuple;
+
 /**
  * 15.2.1 一个元祖类库
  * 练习：不同长度的元祖
