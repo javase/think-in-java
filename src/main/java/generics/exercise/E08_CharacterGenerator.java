@@ -5,6 +5,44 @@ import java.util.Random;
 
 import net.mindview.util.Generator;
 
+/**
+ * 练习8: (2) 模仿Coffee示例的样子，根据你喜爱的电影人物，创建一个StoryCharacters的
+ * 类层次结构，将它们划分为GoodGuys和BadGuys。再按照CoffeeGenerator的形式，编写一个
+ * StoryCharacters的生成器。
+ * created at 2020-04-11 16:16
+ * @author lerry
+ */
+public class E08_CharacterGenerator {
+	public static void main(String[] args) {
+		CharacterGenerator gen = new CharacterGenerator();
+		for (int i = 0; i < 7; i++) {
+			System.out.println(gen.next());
+		}
+
+		/*
+		 * 继承了 Iterable 接口的类，可以直接用于 foreach语句
+		 */
+		for (StoryCharacter p : new CharacterGenerator(7)) {
+			System.out.println(p);
+		}
+	}
+} /* Output:
+         Harmonica 0 is a good guy
+         Frank 1 is a bad guy
+         Harmonica 2 is a good guy
+         Morton 3 is a bad guy
+         Morton 4 is a bad guy
+         Harmonica 5 is a good guy
+         Morton 6 is a bad guy
+         Frank 7 is a bad guy
+         Harmonica 8 is a good guy
+         Harmonica 9 is a good guy
+         Frank 10 is a bad guy
+         Cheyenne 11 is a good guy
+         Frank 12 is a bad guy
+         Morton 13 is a bad guy
+         *///:~
+
 class StoryCharacter {
 	private static long counter;
 
@@ -42,6 +80,10 @@ class Harmonica extends GoodGuy {
 class Cheyenne extends GoodGuy {
 }
 
+/**
+ * 生成器，继承了 Iterable
+ * 继承了 Iterable 接口的类，可以直接用于 foreach语句
+ */
 class CharacterGenerator implements
 		Generator<StoryCharacter>, Iterable<StoryCharacter> {
 	private Class<?>[] types = {
@@ -71,6 +113,9 @@ class CharacterGenerator implements
 		}
 	}
 
+	/**
+	 * Iterator接口的一个实现类
+	 */
 	class CharacterIterator implements
 			Iterator<StoryCharacter> {
 		int count = size;
@@ -100,29 +145,3 @@ class CharacterGenerator implements
 	}
 }
 
-public class E08_CharacterGenerator {
-	public static void main(String[] args) {
-		CharacterGenerator gen = new CharacterGenerator();
-		for (int i = 0; i < 7; i++) {
-			System.out.println(gen.next());
-		}
-		for (StoryCharacter p : new CharacterGenerator(7)) {
-			System.out.println(p);
-		}
-	}
-} /* Output:
-         Harmonica 0 is a good guy
-         Frank 1 is a bad guy
-         Harmonica 2 is a good guy
-         Morton 3 is a bad guy
-         Morton 4 is a bad guy
-         Harmonica 5 is a good guy
-         Morton 6 is a bad guy
-         Frank 7 is a bad guy
-         Harmonica 8 is a good guy
-         Harmonica 9 is a good guy
-         Frank 10 is a bad guy
-         Cheyenne 11 is a good guy
-         Frank 12 is a bad guy
-         Morton 13 is a bad guy
-         *///:~
