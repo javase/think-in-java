@@ -6,6 +6,11 @@ package functional;// functional/FunctionalAnnotation.java
 
 //import generics.Functional;
 
+/**
+ * 第十三章 函数式编程 函数式接口
+ * created at 2020-05-07 12:34
+ * @author lerry
+ */
 public class FunctionalAnnotation {
 
 	public String goodbye(String arg) {

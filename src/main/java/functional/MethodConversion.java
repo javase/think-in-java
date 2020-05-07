@@ -33,6 +33,7 @@ public class MethodConversion {
 
 		bic = MethodConversion::someOtherName;
 //		 bic.someOtherName(new In1(), new In2()); // Nope
+		// 要调用方法，可以调用接口的函数式方法名（在本例中为 accept()），而不是你的方法名。
 		bic.accept(new In1(), new In2());
 	}
 }
